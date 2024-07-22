@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Profit Prediction',
+            'Startup Profit Prediction',
             textAlign: TextAlign.center,
           ),
           backgroundColor: Colors.white, // AppBar color
