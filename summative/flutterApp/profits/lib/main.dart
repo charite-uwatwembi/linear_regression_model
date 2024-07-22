@@ -10,10 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // Remove debug flag
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Profit Prediction'
-          , textAlign: TextAlign.center,),
+          title: Text(
+            'Profit Prediction',
+            textAlign: TextAlign.center,
+          ),
           backgroundColor: Colors.white, // AppBar color
         ),
         body: ProfitPredictionForm(),
@@ -82,67 +85,74 @@ class _ProfitPredictionFormState extends State<ProfitPredictionForm> {
           end: Alignment.bottomRight,
         ),
       ),
-      padding: const EdgeInsets.all(16.0),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          children: <Widget>[
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'R&D Spend',
-                fillColor: Colors.white,
-                filled: true,
-              ),
-              keyboardType: TextInputType.number,
-              onChanged: (value) {
-                rndSpend = double.parse(value);
-              },
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisSize: MainAxisSize.min, // Center the form
+              children: <Widget>[
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'R&D Spend',
+                    fillColor: Colors.white,
+                    filled: true,
+                  ),
+                  keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    rndSpend = double.parse(value);
+                  },
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Administration',
+                    fillColor: Colors.white,
+                    filled: true,
+                  ),
+                  keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    administration = double.parse(value);
+                  },
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Marketing Spend',
+                    fillColor: Colors.white,
+                    filled: true,
+                  ),
+                  keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    marketingSpend = double.parse(value);
+                  },
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'State',
+                    fillColor: Colors.white,
+                    filled: true,
+                  ),
+                  onChanged: (value) {
+                    state = value;
+                  },
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: _predictProfit,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple[200], // Button color
+                  ),
+                  child: Text(
+                    'Predict Profit',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Administration',
-                fillColor: Colors.white,
-                filled: true,
-              ),
-              keyboardType: TextInputType.number,
-              onChanged: (value) {
-                administration = double.parse(value);
-              },
-            ),
-            SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Marketing Spend',
-                fillColor: Colors.white,
-                filled: true,
-              ),
-              keyboardType: TextInputType.number,
-              onChanged: (value) {
-                marketingSpend = double.parse(value);
-              },
-            ),
-            SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'State',
-                fillColor: Colors.white,
-                filled: true,
-              ),
-              onChanged: (value) {
-                state = value;
-              },
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _predictProfit,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple[200], // Button color
-              ),
-              child:  Text('Predict Profit', 
-                style: TextStyle(color: Colors.white),
-            ),
-        )],
+          ),
         ),
       ),
     );
