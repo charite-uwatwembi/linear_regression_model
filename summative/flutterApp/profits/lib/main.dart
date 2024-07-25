@@ -10,14 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Remove debug flag
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text(
             'Startup Profit Prediction',
             textAlign: TextAlign.center,
           ),
-          backgroundColor: Colors.white, // AppBar color
+          backgroundColor: Colors.white,
         ),
         body: ProfitPredictionForm(),
       ),
@@ -91,7 +91,7 @@ class _ProfitPredictionFormState extends State<ProfitPredictionForm> {
           child: Form(
             key: _formKey,
             child: Column(
-              mainAxisSize: MainAxisSize.min, // Center the form
+              mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 TextFormField(
                   decoration: InputDecoration(
@@ -143,7 +143,7 @@ class _ProfitPredictionFormState extends State<ProfitPredictionForm> {
                 ElevatedButton(
                   onPressed: _predictProfit,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple[200], // Button color
+                    backgroundColor: Colors.purple[200], 
                   ),
                   child: Text(
                     'Predict Profit',
