@@ -28,7 +28,7 @@ def predict(request: PredictionRequest):
         raise HTTPException(status_code=500, detail="Model or encoder not loaded")
 
     try:
-        # Prepare the input data by Extracts values from the request and encodes the state feature
+        # Prepare the input data by Extracts values from request and encodes the state feature
         input_data = [request.rnd_spend, request.administration, request.marketing_spend]
         
         
