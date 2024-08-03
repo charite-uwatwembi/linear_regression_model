@@ -6,7 +6,7 @@
 
 based on TV marketing expenses. i investigated three different approaches to this problem. i used `NumPy` and `Scikit-Learn` linear regression models, as well as constructed and optimized the sum of squares cost function with gradient descent from scratch.
 
-## B. Linear Regression for predicting startup profits (multivariate)
+## B. Linear Regression for predicting startup businesses profits (multivariate)
 
  Develop a linear regression model to predict the profit of startups based on R&D spend, administration spend, marketing spend, and the state. The model will be trained on a provided dataset and evaluated on its predictive performance.
 - **Instructions to run the notebook**:
